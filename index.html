@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> Jeu save me</h1>
+    <h6 id="titre">clicker sur le bouton "start"</h6>
+    <div id="container">
+        <div id="b1"></div>
+        <div id="b2"></div>
+        <div id="b3"></div>
+        <button id="end" onclick="bravo()">
+            E
+        </button>
+        <div id="b4"></div>
+        <button id="start" onclick="commence()">
+            S
+        </button>
+        <div id="b5"></div>
+
+    </div>
+    <script>
+function commence() {
+    // Modifier le contenu de l'élément avec l'ID "titre"
+    let titre = document.getElementById("titre");
+    titre.innerHTML = "Trouver la solution";
+
+    // Ajouter un événement "mouseover" à tous les <div>
+    let divs = document.getElementsByTagName("div");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener("mouseover", function (e) {
+            titre.innerHTML = "Désolé, vous avez perdu!";
+            e.target.style.backgroundColor = "red";
+
+        });
+    }
+}
+
+
+function bravo(){
+    s=document.getElementById("titre").innerHTML="bravo";
+
+}
+    </script>
+</body>
+</html>
